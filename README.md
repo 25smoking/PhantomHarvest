@@ -1,12 +1,15 @@
 # PhantomHarvest 使用手册
-// 在一次红队行动中，我拿到了目标的管理员权限，但当我使用传统的密码获取工具尝试导出 Chrome 密码时，结果全是空的
+// 有一天当我使用传统的密码获取工具尝试导出 Chrome 密码时，结果全是空的。
 
 后来发现可能是Google浏览器内核版本太高了，同时再不关闭浏览器的情况下，强制读取 `Login Data` 文件触发了文件占用锁，导致读取失败。
 
 更糟糕的是，他的Telegram 都是便携版，放在了 E 盘，自动化工具完全扫描不到。
 
-网上查了一下，找了几个软件逆向并缝合，PhantomHarvest诞生了。
+// 网上查了一下，找了几个软件逆向并缝合，PhantomHarvest诞生了。
+
 PhantomHarvest 是一个隐蔽的后渗透传输软件，专为红队评估和安全研究设计。它能够从目标系统中提取敏感信息，并支持隐蔽的本地保存或远程传输。
+
+全靠AI，谢谢Gemini，谢谢Gemini喵。
 
 ## 🚀 核心功能与支持列表
 
@@ -136,7 +139,6 @@ Chrome 127+ 引入了 App-Bound Encryption，使得传统工具失效。PhantomH
 2.  **Handle Duplication**：如果失败，则复制目标进程的句柄直接读取内存 (需要管理员权限)。
 
 ### 3. 隐蔽性 (Stealth)
-*   **AMSI Bypass**：内置内存补丁，绕过 Windows Defender 扫描。
 *   **无硬编码**：程序内部不包含任何 C2 地址或 Token，静态分析无法获取你的配置。
 *   **动态混淆**：关键字符串 (如 "explorer", "system") 在运行时动态解密。
 
@@ -162,9 +164,16 @@ A:
 A: 程序设计为静默运行。如果使用了 `--save`，请留意控制台最后的绿色输出路径。如果使用了 `--telegram`，请检查手机是否收到消息。
 
 ---
+ *(免责声明：本项目仅供安全研究与授权测试使用，请勿用于非法用途。)*
 
+
+
+致谢：Gemini3
+
+参考：Pillager:https://github.com/qwqdanchun/Pillager
 ## ⚠️ 免责声明
 本项目仅供授权的安全测试、红队评估和教育目的使用。严禁用于非法入侵、窃取隐私或任何未经授权的恶意活动。使用者需自行承担所有法律责任。
 致谢：Gemini3
 
 Pillager:https://github.com/qwqdanchun/Pillager
+
